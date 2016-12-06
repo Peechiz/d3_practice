@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>D3 Chart!</title>
+  <style>
+    .blam div {
+      font: 10px sans-serif;
+      background-color: steelblue;
+      text-align: right;
+      padding: 3px;
+      margin: 1px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="blam"></div>
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script type="text/javascript">
+
+    var data = [1, 5, 17, 4, 20];
+
+    console.log(d3)
+
+    var x = d3.scaleLinear()
+    .domain([0, d3.max(data)])
+    .range([0, 420]);
+
+    d3.select('.blam')
+      .selectAll('div')
+      .data(data)
+      .enter().append('div')
+      .style('width', d => x(d) + 'px')
+      .text(d => d);
+
+    /////////////////////////////////////////////////
+
+
+  </script>
+</body>
+
+</html>
